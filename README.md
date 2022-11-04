@@ -49,7 +49,7 @@ Tutorial scripts for dispatching parallel jobs to SLURM cluster. Start with send
 
 #### Resources
 - For details about configuration parameters in the header portion of SLURM bash script, see [official documentation for `sbatch`](https://slurm.schedmd.com/sbatch.html)
-- For details about the function `srun` that dispatches each task, see 9official documentation for `srun`](https://slurm.schedmd.com/srun.html)
+- For details about the function `srun` that dispatches each task, see [official documentation for `srun`](https://slurm.schedmd.com/srun.html)
 - For details about how the filenames for the logfiles are inferred, see [this section of the `sbatch` documentation](https://slurm.schedmd.com/sbatch.html#SECTION_%3CB%3Efilename-pattern%3C/B%3E)
 - For details about which environment variables are available when a job has been dispatched, see [this section of the `sbatch` documentation](https://slurm.schedmd.com/sbatch.html#SECTION_OUTPUT-ENVIRONMENT-VARIABLES)
 

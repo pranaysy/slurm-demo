@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Nov  3 13:24:11 2022
+This script takes an integer argument (as a string) and generates fake data using MNE.
+Specifically, the script mimics a 'per subject-datafile' analysis worfklow and creates
+a MNE Raw object, a plot of synthetic raw data as well as a log file in a nested folder.
 
 @author: py01
 """
@@ -33,10 +35,10 @@ datadir.mkdir(exist_ok=True)
 # Logging to file
 
 # Option A: Just enough
-# mne.set_log_file(
-#     fname=str(datadir / f"{argv[1]}_mne_out.log"),
-#     output_format="%(asctime)s [%(process)d][%(levelname)s]: %(message)s",
-# )
+mne.set_log_file(
+    fname=str(datadir / f"{argv[1]}_mne_out.log"),
+    output_format="%(asctime)s [%(process)d][%(levelname)s]: %(message)s",
+)
 
 # Option B: A bit more
 # mne.set_log_file(
@@ -45,10 +47,10 @@ datadir.mkdir(exist_ok=True)
 # )
 
 # Option C: Definitely too much
-mne.set_log_file(
-    fname=str(datadir / f"{argv[1]}_mne_out.log"),
-    output_format="%(asctime)s [%(process)d][%(levelname)s]: %(message)s\t(%(pathname)s:L%(lineno)d)",
-)
+# mne.set_log_file(
+#     fname=str(datadir / f"{argv[1]}_mne_out.log"),
+#     output_format="%(asctime)s [%(process)d][%(levelname)s]: %(message)s\t(%(pathname)s:L%(lineno)d)",
+#)
 
 # Use the 'matplotlib' backend for plotting raw data since headless/etc.
 mne.viz.set_browser_backend("matplotlib")
